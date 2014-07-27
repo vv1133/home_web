@@ -45,11 +45,11 @@ def index(req):
 def music(req):
 	global my_app
 	my_app.update_music_status()
-	return render_to_response("index.html", {"app":my_app})
+	return render_to_response("music.html", {"app":my_app})
 
 def weibo(req):
 	global my_app
 	my_app.post_weibo()
-	return render_to_response("index.html", {"app":my_app})
+	return render_to_response("weibo.html", {"app":my_app})
 
 
