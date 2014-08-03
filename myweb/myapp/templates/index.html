@@ -13,12 +13,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>my web</title>
 </head>
+
 <body>
+
 <h1>welcome!</h1>
-<a href=/myapp/music class="hyperlink" target=_parent>MUSIC</a>
-<span style="font-size: 18pt">{{app.music}}</span>
-<br>
-<a href=/myapp/weibo class="hyperlink" target=_parent>WEIBO</a>
-<span style="font-size: 18pt">{{app.weibo}}</span>
+
+<form method="post">
+<span style="font-size: 20pt"><B>MUSIC</B></span>
+<input type="submit" name="music" value="ON/OFF"> 
+<span style="font-size: 18">{{app.music}}</span>
+</form>
+
+<form method="post">
+<span style="font-size: 20pt"><B>WEIBO</B></span>
+<input type="text" name="weibo_content">
+<input type="submit" name="weibo" value="Post"> 
+</form>
+
 </body>
 </html>

@@ -10,6 +10,4 @@ urlpatterns = patterns('',
 
     #url(r'^admin/', include(admin.site.urls)),
     url(r'^myapp/index/$', 'myapp.views.index'),
-    url(r'^myapp/music/$', 'myapp.views.music'),
-    url(r'^myapp/weibo/$', 'myapp.views.weibo'),
 )
