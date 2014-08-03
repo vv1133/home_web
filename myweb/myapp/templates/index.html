@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<style type="text/css">
-<!--
-.hyperlink {
-	font-size: 20pt;
+<style> 
+.weibo_list{ 
+	width:250px; 
+} 
+.tv_submit{ 
+	width:50px; 
 }
--->
+.command_list{ 
+	width:350px; 
+} 
 </style>
 <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
 <head>
@@ -26,8 +30,28 @@
 
 <form method="post">
 <span style="font-size: 20pt"><B>WEIBO</B></span>
-<input type="text" name="weibo_content">
+<input class="weibo_list" type="text" name="weibo_content">
 <input type="submit" name="weibo" value="Post"> 
+</form>
+
+<form method="post">
+<span style="font-size: 20pt"><B>TV</B></span>
+<input class="tv_submit" type="submit" name="tv_power" value="Power"> 
+<input class="tv_submit" type="submit" name="tv_mute" value="Mute"> 
+<input class="tv_submit" type="submit" name="tv_ok" value="OK"> 
+<input class="tv_submit" type="submit" name="tv_ch+" value="Ch+"> 
+<input class="tv_submit" type="submit" name="tv_ch-" value="Ch-"> 
+<input class="tv_submit" type="submit" name="tv_vol+" value="Vol+"> 
+<input class="tv_submit" type="submit" name="tv_vol-" value="Vol-"> 
+</form>
+
+<br>
+<br>
+<br>
+<form method="post">
+<span style="font-size: 10pt">COMMAND</span>
+<input class="command_list" type="text" name="command_line">
+<input type="submit" name="command" value="OK"> 
 </form>
 
 </body>
