@@ -36,13 +36,13 @@
 
 <form method="post">
 <span style="font-size: 20pt"><B>TV</B></span>
-<input class="tv_submit" type="submit" name="tv_power" value="Power"> 
-<input class="tv_submit" type="submit" name="tv_mute" value="Mute"> 
-<input class="tv_submit" type="submit" name="tv_ok" value="OK"> 
-<input class="tv_submit" type="submit" name="tv_ch+" value="Ch+"> 
-<input class="tv_submit" type="submit" name="tv_ch-" value="Ch-"> 
-<input class="tv_submit" type="submit" name="tv_vol+" value="Vol+"> 
-<input class="tv_submit" type="submit" name="tv_vol-" value="Vol-"> 
+<input class="tv_submit" type="submit" name="tv" value="Power"> 
+<input class="tv_submit" type="submit" name="tv" value="Mute"> 
+<input class="tv_submit" type="submit" name="tv" value="OK"> 
+<input class="tv_submit" type="submit" name="tv" value="Ch+"> 
+<input class="tv_submit" type="submit" name="tv" value="Ch-"> 
+<input class="tv_submit" type="submit" name="tv" value="Vol+"> 
+<input class="tv_submit" type="submit" name="tv" value="Vol-"> 
 </form>
 
 <br>
@@ -52,6 +52,8 @@
 <span style="font-size: 10pt">COMMAND</span>
 <input class="command_list" type="text" name="command_line">
 <input type="submit" name="command" value="OK"> 
+<br>
+<span style="font-size: 14">{{app.cmd_out}}</span>
 </form>
 
 </body>
