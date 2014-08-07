@@ -16,6 +16,7 @@ class App(object):
 	def __init__(self):
 		self.music = "off"
 		self.cmd_out = ""
+		self.light = "off"
 
 	def update_music_status(self):
 		if cmp(self.music, "off") == 0:
@@ -35,6 +36,12 @@ class App(object):
 		args = cmd.split("+")
 		print "post weibo..."
 		Popen(args)
+
+	def switch_light(self):
+		if cmp(self.light, "off") == 0:
+			self.light = "on"
+		else:
+			self.light = "off"
 
 	def exec_command(self, command):
 		args = command.split(" ")
@@ -69,6 +76,11 @@ def index(req):
 	elif req.POST.has_key('tv'):
 		key_value = req.POST['tv']
 		print key_value
+		return render_to_response("index.html", {"app":my_app})
+
+	elif req.POST.has_key('lights'):
+		print "light"
+		my_app.switch_light()
 		return render_to_response("index.html", {"app":my_app})
 
 	elif req.POST.has_key('command'):
