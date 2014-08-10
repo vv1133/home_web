@@ -37,6 +37,17 @@ class App(object):
 		print "post weibo..."
 		Popen(args)
 
+	def ir_tv(self, key):
+		tv_map = {"Power":"KEY_POWER", "Mute":"KEY_MUTE", "OK":"KEY_OK", "Ch+":"KEY_UP",\
+			"Ch-":"KEY_DOWN", "Vol+":"KEY_VOLUMEUP", "Vol-":"KEY_VOLUMEDOWN"}
+		if not key in tv_map:
+			print "error: %s" %(key)
+
+		print "send tv key: %s" %(tv_map[key])
+		cmd = "/home/pi/tv/send_tv_key.sh" + " " + tv_map[key]
+		args = cmd.split(" ")
+		Popen(args)
+
 	def switch_light(self):
 		if cmp(self.light, "off") == 0:
 			self.light = "on"
@@ -76,6 +87,7 @@ def index(req):
 	elif req.POST.has_key('tv'):
 		key_value = req.POST['tv']
 		print key_value
+		my_app.ir_tv(key_value)
 		return render_to_response("index.html", {"app":my_app})
 
 	elif req.POST.has_key('lights'):
