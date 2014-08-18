@@ -17,6 +17,7 @@ class App(object):
 		self.music = "off"
 		self.cmd_out = ""
 		self.light = "off"
+		self.tem_hum = ""
 
 	def update_music_status(self):
 		if cmp(self.music, "off") == 0:
@@ -53,6 +54,16 @@ class App(object):
 			self.light = "on"
 		else:
 			self.light = "off"
+
+	def get_tem_hum(self):
+		cmd = "/home/pi/dht11/dht11.sh"
+		args = cmd.split(" ")
+		print args
+		try:
+			p = Popen(args=args, stdout=PIPE, stderr=PIPE)
+			self.tem_hum = p.stdout.read()
+		except:
+			self.tem_hum = "get data error"
 
 	def exec_command(self, command):
 		args = command.split(" ")
@@ -93,6 +104,11 @@ def index(req):
 	elif req.POST.has_key('lights'):
 		print "light"
 		my_app.switch_light()
+		return render_to_response("index.html", {"app":my_app})
+
+	elif req.POST.has_key('tem_hum'):
+		print "T&H"
+		my_app.get_tem_hum()
 		return render_to_response("index.html", {"app":my_app})
 
 	elif req.POST.has_key('command'):
