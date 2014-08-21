@@ -50,6 +50,9 @@ class App(object):
 		Popen(args)
 
 	def switch_light(self):
+		cmd = "/home/pi/rcswitch-pi/send.sh"
+		args = cmd.split(" ")
+		Popen(args)
 		if cmp(self.light, "off") == 0:
 			self.light = "on"
 		else:
