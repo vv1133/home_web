@@ -45,12 +45,12 @@ class App(object):
 			print "error: %s" %(key)
 
 		print "send tv key: %s" %(tv_map[key])
-		cmd = "/home/pi/tv/send_tv_key.sh" + " " + tv_map[key]
+		cmd = "/home/pi/pi_modules/module.py" + " " + "send_ir"
 		args = cmd.split(" ")
 		Popen(args)
 
 	def switch_light(self):
-		cmd = "/home/pi/rcswitch-pi/send.sh"
+		cmd = "/home/pi/pi_modules/module.py" + " " + "send_rc"
 		args = cmd.split(" ")
 		Popen(args)
 		if cmp(self.light, "off") == 0:
@@ -59,7 +59,7 @@ class App(object):
 			self.light = "off"
 
 	def get_tem_hum(self):
-		cmd = "/home/pi/dht11/dht11.sh"
+		cmd = "/home/pi/pi_modules/module.py" + " " + "dht11"
 		args = cmd.split(" ")
 		print args
 		try:
